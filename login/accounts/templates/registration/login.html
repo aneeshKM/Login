@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title%}Login{% endblock %}
+{% block css %}
+
+ .container{
+    justify-contents:center;
+    align-itmes:center;
+    margin-top:150px;
+    }
+.col-md-6{
+background:#fff;
+}
+body {
+background-color:#F2F6FF;
+background-position: center;
+    }
+h1{
+font-size:2.5rem;
+       font-weight:700;
+       color:#1A4177;
+       letter-spacing:2px;
+}
+.text-center{
+color:#1A4177;
+}
+button{
+border-radius: 4px;
+color:#F2F6FF;
+background-color:#1A4177;
+padding-top:5px;
+padding-bottom:5px;
+padding-right:40px;
+padding-left:40px;
+border: 2px solid #A5D1EE;
+letter-spacing:2px;
+}
+a:hover{
+color:#FF0000;
+text-decoration: none;
+}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container container-fluid">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h1 class="text-center">Login to your Account</h1><br>
+                <form method="post" class="form-horizontal" >
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <p>You already have an account? Click
+                            <a href="/accounts/register"> here</a> to login</p>
+                        <button>Login</button>
+                     </div>
+                </form>
+            </div>
+        </div>
+</div>
+
+{% endblock %}
